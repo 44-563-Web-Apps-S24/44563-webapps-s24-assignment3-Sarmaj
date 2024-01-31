@@ -105,6 +105,32 @@
 
     <!-- Link to My Media Page -->
     <a href="mymedia.html">Explore My Media</a>
+    
+    
+    <hr></hr>
+    <h3>CSV data snippet </h3>
+    <p>Python snippet to parse CSV data and store it in a list of dictionaries</p>
+    <pre>
+        <code>
+            import csv
+
+def parse_csv_data(csv_path):
+	csv_mapping_list = []
+
+	with open(csv_path) as my_data:
+	    csv_reader = csv.reader(my_data, delimiter=",")
+	    line_count = 0
+	    for line in csv_reader:
+	        if line_count == 0:
+	            header = line
+	        else:
+	            row_dict = {key: value for key, value in zip(header, line)}
+	            csv_mapping_list.append(row_dict)
+	        line_count += 1 
+        </code>
+    </pre>
+    <a href="https://code.pieces.app/collections/python">Link to my sql code snippet</a>
+    <br>
 </body>
 </html>
 
